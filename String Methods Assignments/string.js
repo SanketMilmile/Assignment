@@ -4,18 +4,22 @@ function stringm()
    let firstname = document.getElementById("firstname").value;
    let lastname = document.getElementById("lastname").value;
    let age = document.getElementById("age").value;
-
+     var flag =0;
    if( email == ""){
        alert("enter email!!");
+       flag =1;
    }
    if( firstname == ""){
-    alert("enter firstname!!");
-    }
+       alert("enter firstname!!");
+      flag =1;
+}
     if( lastname == ""){
         alert("enter lastname!!");
+         flag =1;
     }
     if( age == "" && age <= 0){
      alert("enter valid age!!");
+     flag =1;
     }
 
     
@@ -38,8 +42,11 @@ function stringm()
         return lastname1;
     }
 
+     if(flag == 0){
+        document.getElementById("first_name").innerHTML = "Firstname : " + sentenceCase() ;
+        document.getElementById("last_name").innerHTML = "Lastname : " + sentenceCasel();
+        document.getElementById("age_value").innerHTML = "Age : " + ageidentify();
+        document.getElementById("email_value").innerHTML = "Email : " + email;
+    }
     
-    document.getElementById("first_name").innerHTML = "Firstname : " + sentenceCase() +" " + sentenceCasel();
-    // document.getElementById("last_name").innerHTML = "Lastname : " + sentenceCasel();
-    document.getElementById("age_value").innerHTML = "Age : " + ageidentify();
 }
